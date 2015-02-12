@@ -14,6 +14,7 @@ RUN wget -q -O - http://apache.mirrors.pair.com/zookeeper/zookeeper-${ZK_VERSION
 EXPOSE 2181 2888 3888
 WORKDIR /opt/zookeeper
 
+# location where snapshots will be stored
 VOLUME ["/tmp/zookeeper"]
 
 CMD ["/opt/zookeeper/bin/zkServer.sh", "start-foreground"]
